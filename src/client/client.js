@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
 
+import ReactDOM from "react-dom"
+ import Home from "./component/Home"
 
-console.log("Hi there|||")
+ ReactDOM.hydrate(<Home />,document.querySelector("#root"))
