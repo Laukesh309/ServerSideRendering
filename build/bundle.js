@@ -7052,10 +7052,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var app = (0, _express2.default)();
 
+app.use(_express2.default.static('public'));
 app.get("/", function (req, res) {
 
   var content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));
-  res.send(content);
+  var html = "\n  <html>\n      <head>\n      </head>\n      <body>\n      <div>" + content + "</div>\n     \n      <script src =\"bundle.js\"></script>\n      </body>\n  </html>";
+  res.send(html);
 });
 
 app.listen(3000, function () {
@@ -22722,7 +22724,7 @@ module.exports = camelize;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+   value: true
 });
 
 var _react = __webpack_require__(15);
@@ -22732,26 +22734,26 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Home = function Home() {
-    return _react2.default.createElement(
-        "div",
-        null,
-        _react2.default.createElement(
-            "h1",
-            null,
-            "I' n  laukesh  very very verythe  this is laukesh Kumar yadav main home component"
-        ),
-        _react2.default.createElement(
-            "h1",
-            null,
-            _react2.default.createElement(
-                "button",
-                { onClick: function onClick() {
-                        console.log("this is home component");
-                    } },
-                "pressMe"
-            )
-        )
-    );
+   return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+         "h1",
+         null,
+         "I' n  laukesh  very very verythe  this is laukesh Kumar yadav main home component"
+      ),
+      _react2.default.createElement(
+         "h1",
+         null,
+         _react2.default.createElement(
+            "button",
+            { onClick: function onClick() {
+                  console.log("this is home component");
+               } },
+            "pressMe"
+         )
+      )
+   );
 };
 
 exports.default = Home;
