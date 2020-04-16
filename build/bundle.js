@@ -7034,15 +7034,27 @@ if (process.env.NODE_ENV === 'production') {
 "use strict";
 
 
-var express = __webpack_require__(53);
-var React = __webpack_require__(15);
-var app = express();
-var renderToString = __webpack_require__(111).renderToString;
-var Home = __webpack_require__(122).default;
+var _express = __webpack_require__(53);
+
+var _express2 = _interopRequireDefault(_express);
+
+var _react = __webpack_require__(15);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _server = __webpack_require__(111);
+
+var _Home = __webpack_require__(122);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var app = (0, _express2.default)();
 
 app.get("/", function (req, res) {
 
-  var content = renderToString(React.createElement(Home, null));
+  var content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));
   res.send(content);
 });
 
@@ -22721,12 +22733,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Home = function Home() {
     return _react2.default.createElement(
-        'div',
+        "div",
         null,
         _react2.default.createElement(
-            'h1',
+            "h1",
             null,
-            'I\' n the  laukesh yadav home component'
+            "I' n  laukesh  very very verythe  this is laukesh Kumar yadav main home component"
+        ),
+        _react2.default.createElement(
+            "h1",
+            null,
+            _react2.default.createElement(
+                "button",
+                { onClick: function onClick() {
+                        console.log("this is home component");
+                    } },
+                "pressMe"
+            )
         )
     );
 };
